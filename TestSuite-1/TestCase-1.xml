@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b6952a4d-da74-4f97-85de-feec0ec07f5e" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="b6952a4d-da74-4f97-85de-feec0ec07f5efileName">TestCase-1</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="6b1603e3-3f97-4fc7-ad63-5794b2a3e6c3">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/mairtin.conneely/OneDrive - SmartBear Software, Inc/Documents/Work/Excel/petstore_names.xlsx</file>
+          <worksheet/>
+          <cell>A1</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Name</con:property>
+      <con:property>Id</con:property>
+      <con:property>bool</con:property>
+      <con:property>integer</con:property>
+      <con:property>decimal</con:property>
+      <con:startRow>1</con:startRow>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="getPetById - Request 1" id="35aa048e-9b4f-4de3-bb13-f9211f701893">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/{petId}" methodName="getPetById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="getPetById - Request 1" id="ef58cc52-9738-4595-ac6f-d2c8c741152b" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/1</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="petId" value="${Data Source#Name}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Add Item" id="97e5423f-7c1d-4e64-9ee8-9caabc43bb77">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/{petId}" methodName="updatePetWithForm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Add Item" id="fd255f5b-dd32-4cca-857d-4f4d45957902" mediaType="application/x-www-form-urlencoded" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f2104aca-0aa9-4c0c-9334-72849a4da42b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200,404</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="0d9ef041-594e-4bd7-86b5-e66638f42a1f" name="Response SLA">
+          <con:configuration>
+            <SLA>800</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="dbdfbc79-5900-4449-ad7f-ac667b425343" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['code']</con:path>
+              <con:element>code</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Id}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['type']</con:path>
+              <con:element>type</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>unknown</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['message']</con:path>
+              <con:element>message</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>not found</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"code":404,"type":"unknown","message":"not found"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="petId" value="${getPetById - Request 1#Response#$['code']}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="findPetsByTags - Request 1" id="fa5be1ae-26a9-4106-bf80-d25ed896e860">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/findByTags" methodName="findPetsByTags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="findPetsByTags - Request 1" id="d3a864b1-852c-4cd4-b5b7-41f95b782dc5" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{"code":1,"type":"error","message":"Pet not found"}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/findByTags</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="ee0f0dc2-2afa-47f2-97e9-c653f8ad8935" name="Response SLA" disabled="true">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="tags" value="${getPetById - Request 1#Response#$['type']}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="d5aaa61c-5a60-4d62-8f1d-f71aa8be751e">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source</dataSourceStep>
+      <targetStep>getPetById - Request 1</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:loadTest id="d4003ee2-793e-4f6a-b8bd-dc4cb687d69d" name="LoadTest 1">
+    <con:settings>
+      <con:setting id="HttpSettings@close-connections">false</con:setting>
+      <con:setting id="hasBeenConvertedToLoadUITest">true</con:setting>
+    </con:settings>
+    <con:threadCount>78</con:threadCount>
+    <con:startDelay>0</con:startDelay>
+    <con:sampleInterval>250</con:sampleInterval>
+    <con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+    <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+    <con:historyLimit>-1</con:historyLimit>
+    <con:testLimit>20</con:testLimit>
+    <con:limitType>TIME</con:limitType>
+    <con:loadStrategy>
+      <con:type>Thread</con:type>
+      <con:config>
+        <startThreadCount>1</startThreadCount>
+        <endThreadCount>10</endThreadCount>
+      </con:config>
+    </con:loadStrategy>
+    <con:assertion type="Step Status" name="Step Status"/>
+    <con:maxAssertionErrors>100</con:maxAssertionErrors>
+    <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+    <con:strategyInterval>500</con:strategyInterval>
+    <con:reportParameters/>
+  </con:loadTest>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

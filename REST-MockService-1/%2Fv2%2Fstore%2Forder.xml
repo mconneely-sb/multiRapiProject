@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/v2/store/order" method="POST" resourcePath="/v2/store/order" id="5e915827-a5db-4824-add5-f4abebed1cd8" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5e915827-a5db-4824-add5-f4abebed1cd8fileName">%2Fv2%2Fstore%2Forder</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 1</con:defaultResponse>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="4290dedf-ab07-4db7-9e92-d1c397a2552c" httpResponseStatus="200" dataSource="">
+    <con:settings/>
+  </con:response>
+</con:restMockAction>

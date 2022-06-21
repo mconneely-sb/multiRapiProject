@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/pet/findByStatus" path="/pet/findByStatus" id="ced9e222-6842-4f45-b147-e21b21923094" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ced9e222-6842-4f45-b147-e21b21923094fileName">%2Fpet%2FfindByStatus</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="findPetsByStatus" id="2b76d084-29d8-4853-a38f-b020ddcb4b8b" method="GET">
+    <con:description>Multiple status values can be provided with comma separated strings
+Finds Pets by status</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>status</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Status values that need to be considered for filter</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="131cec54-ccfe-405c-b803-6f166305bcd1" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://petstore.swagger.io</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://petstore.swagger.io/v2/pet/findByStatus</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:jmsPropertyConfig/>
+      <con:parameters>
+        <entry key="status" value="available" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

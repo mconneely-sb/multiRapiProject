@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="194c5577-0613-4679-9380-4d89c0e9c5c6" wadlVersion="http://wadl.dev.java.net/2009/02" name="Swagger Petstore" type="rest" basePath="/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.</con:description>
+  <con:settings>
+    <con:setting id="194c5577-0613-4679-9380-4d89c0e9c5c6fileName">Swagger-Petstore</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>http://SB-IE-9P8G373:8089/</con:endpoint>
+    <con:endpoint>http://petstore.swagger.io</con:endpoint>
+    <con:endpoint>https://petstore.swagger.io</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

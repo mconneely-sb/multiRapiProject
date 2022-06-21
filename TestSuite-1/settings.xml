@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="0b4b82ad-bf41-4b8f-98b7-6ef5f41ef891" name="TestSuite 1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0b4b82ad-bf41-4b8f-98b7-6ef5f41ef891fileName">TestSuite-1</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/v2/pet/findByStatus" method="GET" resourcePath="/v2/pet/findByStatus" id="babad3c4-51c6-42e1-a5bf-1ef4f06901d7" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="babad3c4-51c6-42e1-a5bf-1ef4f06901d7fileName">%2Fv2%2Fpet%2FfindByStatus</con:setting>
+  </con:settings>
+  <con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="e1217a09-82ab-4ded-868c-5bfd48a80ceb" httpResponseStatus="200" dataSource="">
+    <con:settings/>
+  </con:response>
+</con:restMockAction>

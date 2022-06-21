@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="855c3a29-262f-421c-a5bc-b3a81b972546" activeEnvironment="dev" name="RestAPI-SoapUI-Sample-Project" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" compositeProjectFormat="1.3" updated="3.40.1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormBase Path"/>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormTarget Folder">C:\Users\mairtin.conneely\OneDrive - SmartBear Software, Inc\Desktop\test</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormFormat">yaml</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormAPI Version">1.0</con:setting>
+    <con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormSwagger Version">2.0</con:setting>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="TestCase 1"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+  <con:environment id="e3f15010-ac6f-4f45-8fff-4b735d284213" name="staging" index="0">
+    <con:service type="REST" name="Swagger Petstore">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://petstore.swagger.staging.io</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="2208eb91-73ab-42aa-b683-08f42218b073" name="dev" index="1">
+    <con:service type="REST" name="Swagger Petstore">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://petstore.swagger.dev.io</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="e3f15010-ac6f-4f45-8fff-4b735d284213">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2208eb91-73ab-42aa-b683-08f42218b073">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tags/>
+</con:soapui-project>
